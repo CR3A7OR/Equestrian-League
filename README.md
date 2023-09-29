@@ -14,7 +14,8 @@ Compete with your friends in a real-time horse race, where the odds matter and t
   [![Discord](https://img.shields.io/badge/Discord-%235865F2.svg?style=for-the-badge&logo=discord&logoColor=white)](https://discord.com/api/oauth2/authorize?client_id=1141358540229988382&permissions=274877967360&scope=bot)
 </div>
 
-- [Code Documentation](https://eql.trioffline.com/)
+- [Support Server]()
+- [Code Documentation](https://discord.gg/Rg2pGxGk4p)
 - [Terms of Use](https://eql.trioffline.com/terms)
 - [Privacy Policy](https://eql.trioffline.com/privacy)
 
