@@ -1,0 +1,6 @@
+# Ignore Everything
+**
+
+# Allow required files
+!package.json
+!/home/ubuntu/discord-horse-racing/*
