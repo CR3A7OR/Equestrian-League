@@ -21,8 +21,15 @@ Compete with your friends in a real-time horse race, where the odds matter and t
 - [Privacy Policy](https://eql.trioffline.com/privacy)
 
 
+## Sped Up Demo
+<div align="center">
+  
+  ![Demo](AnimationRace.gif)
+</div>
+
 ## LICENSE
 [Licensed under GPL-3.0](https://github.com/CR3A7OR/Equestrian-League/blob/main/LICENSE)
+
 
 <div align="center">
 --- [ 𝗖𝗥𝟯𝗔𝗧𝟬𝗥 ] // Designed By --- 
