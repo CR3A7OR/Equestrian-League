@@ -20,6 +20,7 @@ Compete with your friends in a real-time horse race, where the odds matter and t
 - [Terms of Use](https://eql.trioffline.com/terms)
 - [Privacy Policy](https://eql.trioffline.com/privacy)
 
+#### *Enjoying the bot? Leave a review on my [Top GG](https://top.gg/bot/1141358540229988382) page*
 
 ## Sped Up Demo
 <div align="center">
