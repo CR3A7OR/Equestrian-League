@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  discord-bot:
+    build:
+       context: "."
+       dockerfile: "./Dockerfile"
+    working_dir: /usr/src/bot
+    volumes:
+      - ${EQPATH}:/usr/src/bot
+    depends_on:
+      - sqlite3-db
+    networks:
+      - EQLnet
+    restart: on-failure
+
+  sqlite3-db:
+    image: keinos/sqlite3:latest
+    volumes:
+      - ./userbalDB.db:/usr/src/bot/userbalDB.db
+    networks:
+      - EQLnet
+    restart: on-failure
+
+volumes:
+  sqlite-data:
+
+networks:
+    EQLnet:
+      name: EQLnet
+      external: true

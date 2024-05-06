@@ -1,0 +1,31 @@
+{
+  "name": "discord-horse-racing",
+  "version": "1.0.0",
+  "description": "A online game for gambling with friends against emoji running horses",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CR3A7OR/Equestrian-League.git"
+  },
+  "keywords": [
+    "horse",
+    "racing",
+    "bets",
+    "gambling",
+    "friends",
+    "co-op"
+  ],
+  "author": "CR3AT0R",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CR3A7OR/Equestrian-League/issues"
+  },
+  "homepage": "https://github.com/CR3A7OR/Equestrian-League#readme",
+  "dependencies": {
+    "discord.js": "^14.14.1",
+    "sqlite3": "^5.1.6"
+  }
+}
