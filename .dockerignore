@@ -1,6 +1,15 @@
+<<<<<<< HEAD
 # Ignore Everything
 **
 
 # Allow required files
 !package.json
 !./discord-horse-racing/*
+=======
+# Ignore Everything
+**
+
+# Allow required files
+!package.json
+!./discord-horse-racing/*
+>>>>>>> 00ed65a7fe94b4c40cffe90da83b29b0d0341439

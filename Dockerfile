@@ -9,5 +9,8 @@ COPY package.json /usr/src/bot
 RUN npm install
 # Start the bot.
 
+<<<<<<< HEAD
 CMD ["node", "deploy-commands.js"]
+=======
+>>>>>>> 00ed65a7fe94b4c40cffe90da83b29b0d0341439
 CMD ["node", "index.js"]

@@ -7,11 +7,19 @@ services:
        dockerfile: "./Dockerfile"
     working_dir: /usr/src/bot
     volumes:
+<<<<<<< HEAD
       - ${EQPATH}:/usr/src/bot
     depends_on:
       - sqlite3-db
     networks:
       - EQLnet
+=======
+      - /home/ubuntu/discord-horse-racing:/usr/src/bot
+    depends_on:
+      - sqlite3-db
+    networks:
+      - bot-network
+>>>>>>> 00ed65a7fe94b4c40cffe90da83b29b0d0341439
     restart: on-failure
 
   sqlite3-db:
@@ -19,13 +27,21 @@ services:
     volumes:
       - ./userbalDB.db:/usr/src/bot/userbalDB.db
     networks:
+<<<<<<< HEAD
       - EQLnet
+=======
+      - bot-network
+>>>>>>> 00ed65a7fe94b4c40cffe90da83b29b0d0341439
     restart: on-failure
 
 volumes:
   sqlite-data:
 
 networks:
+<<<<<<< HEAD
     EQLnet:
       name: EQLnet
       external: true
+=======
+  bot-network:
+>>>>>>> 00ed65a7fe94b4c40cffe90da83b29b0d0341439

@@ -25,7 +25,11 @@
   },
   "homepage": "https://github.com/CR3A7OR/Equestrian-League#readme",
   "dependencies": {
+<<<<<<< HEAD
     "discord.js": "^14.14.1",
+=======
+    "discord.js": "^14.13.0",
+>>>>>>> 00ed65a7fe94b4c40cffe90da83b29b0d0341439
     "sqlite3": "^5.1.6"
   }
 }
