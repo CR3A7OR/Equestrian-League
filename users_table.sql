@@ -7,3 +7,9 @@ CREATE TABLE users (
     current_streak INTEGER DEFAULT 0, 
     longest_streak INTEGER DEFAULT 0
 );
+
+CREATE TABLE guilds (
+    GuildID TEXT,
+    UserID TEXT,
+    FOREIGN KEY (UserID) REFERENCES users(id)
+);

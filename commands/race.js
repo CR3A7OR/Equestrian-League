@@ -12,6 +12,8 @@ module.exports = {
   async execute(interaction) {
     const db = new sqlite3.Database('./userbalDB.db');
 
+    const guildId = interaction.guildId;
+
     function getRandomNumberBetween(min,max){
       return Math.floor(Math.random()*(max-min+1)+min);
     }
@@ -305,9 +307,55 @@ module.exports = {
                     }
                   });
                 }
+
+                function getUserId(userID, callback) {
+
+                  const query = `SELECT id FROM users WHERE userID = ?`;
+                  const params = [userID];
+              
+                  db.get(query, params, (err, row) => {
+                      if (err) {
+                          console.error(err.message);
+                          callback(null);
+                      } else {
+                          callback(row ? row.id : null); // Return the unique ID or null if not found
+                      }
+                  });
+                }
+
+                function userExistsInGuilds(userId, guildId, callback) {
+  
+                  let query = `SELECT COUNT(*) FROM guilds WHERE UserID = ? AND GuildID = ?;`;
+                  const params = [userId,guildId];
+
+                  // Execute the query
+                  db.get(query, params, (err, row) => {
+                      if (err) {
+                          console.error(err.message);
+                          callback(false);
+                      } else {
+                          // If the count is greater than 0, user exists
+                          callback(row['COUNT(*)'] > 0);
+                      }
+                  });
+                }
+
+                function addUserToGuilds(userId, guildId) {
+
+                  let query = `INSERT INTO guilds (UserID, GuildID) VALUES (?, ?);`;
+                  const params = [userId,guildId];
+
+                  db.run(query, params, (err) => {
+                      if (err) {
+                          console.error(err.message);
+                      } else {
+                          console.log(`User ${userId} added to GuildStats for guild ${guildId}.`);
+                      }
+                  });
+                }
                 
                 for (const user in usersWhoBetOnHorse){
-                
+  
                   getDetails(user, (err, balance,total_races,current_streak,longest_streak,wins) => {
                     var newBalance = 0;
                     if (err) {
@@ -397,11 +445,26 @@ module.exports = {
                         }
                       });
                     }
+                    getUserId(user, (uniqueId) => {
+                      if (uniqueId) {
+                          // Check if the user exists in guilds for the current guild
+                          userExistsInGuilds(uniqueId, guildId, (exists) => {
+                              if (!exists) {
+                                  // If the user doesn't exist, add them to guilds
+                                  addUserToGuilds(uniqueId, guildId);
+                              }
+                          });
+                      } else {
+                          console.log(`User ${user} not found in the Users table.`);
+                      }
+                    });
                   });
+
                 }
 
                 const winUserIDs = [];
                 var test;
+                  
                 for (const userID in usersWhoBetOnHorse) {
                   if (usersWhoBetOnHorse[userID].outcome === 'win') {
                     winUserIDs.push(userID);
